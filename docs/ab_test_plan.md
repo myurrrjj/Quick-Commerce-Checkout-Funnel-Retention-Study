@@ -30,16 +30,16 @@ Exclusions: users with an existing cart at test start, and internal accounts.
 
 First time buyer checkout conversion, defined as sessions reaching a successful payment divided by sessions reaching cart creation.
 
-Baseline: 25.8%.
-Target: 29.4%, a 14% relative lift.
+Baseline: 26.0%.
+Target: 29.7%, a 14% relative lift.
 
 ## 5. Secondary metrics
 
-- Cart to address step rate. Baseline 70.1% for first time buyers.
-- Cart to payment drop. Baseline 37.2%.
-- Address step drop. Baseline 27.9%.
+- Cart to address step rate. Baseline 70.2% for first time buyers.
+- Cart to payment drop. Baseline 37.0%.
+- Address step drop. Baseline 27.8%.
 - Payment retry success rate. Not tracked today.
-- 30 day repeat rate. Baseline 13.2%.
+- 30 day repeat rate. Baseline 13.1%.
 
 ## 6. Guardrail metrics
 
@@ -47,7 +47,7 @@ Target: 29.4%, a 14% relative lift.
 - Order cancellation rate.
 - Payment failure rate.
 - Support tickets per 1,000 orders.
-- Average order value. Baseline Rs 358.
+- Average order value. Baseline Rs 359.
 
 ## 7. Sample size
 
@@ -55,11 +55,11 @@ Assumptions: two sided test, alpha 0.05, power 0.80.
 
 | Metric | Baseline | Detectable lift | Sample per arm |
 | --- | --- | --- | --- |
-| Checkout conversion | 25.8% | +14% relative | 2,402 |
-| Address step drop | 27.9% | -21% relative | 853 |
-| 30 day repeat | 13.2% | +9% relative | 13,269 |
+| Checkout conversion | 26.0% | +14% relative | 2,372 |
+| Address step drop | 27.8% | -21% relative | 782 |
+| 30 day repeat | 13.1% | +9% relative | 13,293 |
 
-At roughly 192 first time sessions per day, the conversion test needs about 2,400 per arm, or 4,800 total, which is about 25 days. Plan for 4 weeks of running time to cover weekly seasonality.
+At roughly 192 first time sessions per day, the conversion test needs about 2,372 per arm, or 4,744 total, which is about 25 days. Plan for 4 weeks of running time to cover weekly seasonality.
 
 Note on retention: the repeat metric needs about 13,300 per arm to detect a 9% relative lift at 80% power. That is more than a 4 week window can supply. Read retention after 90 days, and treat the 4 week number as directional only. If retention is the decision metric, extend the test window or increase the traffic share.
 
@@ -79,11 +79,11 @@ Minimum 4 weeks. Do not stop early on a positive peek, since that inflates false
 
 | Metric | Baseline | Projected | Basis |
 | --- | --- | --- | --- |
-| Checkout conversion | 25.8% | 29.4% | 14% relative lift |
-| Cart to payment drop | 37.2% | 32.0% | fee and address fixes |
-| 30 day repeat | 13.2% | 14.4% | better first experience |
+| Checkout conversion | 26.0% | 29.7% | 14% relative lift |
+| Cart to payment drop | 37.0% | 32.0% | fee and address fixes |
+| 30 day repeat | 13.1% | 14.3% | better first experience |
 
-If the treatment delivers the fee fix alone, the cart drop for the affected 44.6% of first time sessions moves from 43.5% to 32.2%, which is worth roughly 3 points of conversion on its own. The address fix adds the rest.
+If the treatment delivers the fee fix alone, the cart drop for the affected 45.1% of first time sessions moves from 43.0% to 32.0%, which is worth roughly 3 points of conversion on its own. The address fix adds the rest.
 
 ## 11. Decision rules
 
