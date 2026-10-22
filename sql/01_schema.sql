@@ -38,7 +38,6 @@ CREATE TABLE events (
     ts           TIMESTAMP,
     event        TEXT,
     channel      TEXT,
-    device       TEXT,
     is_new       INTEGER,
     cart_value   REAL,
     delivery_fee REAL,
