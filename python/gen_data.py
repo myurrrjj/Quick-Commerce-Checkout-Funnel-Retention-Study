@@ -83,9 +83,6 @@ def make_session(sid, uid, ch, dv, tr, ts, new):
     if v:
         t = t + pd.Timedelta(seconds=int(rng.integers(3, 25)))
         evs.append(("item_view", t))
-        for _ in range(int(rng.integers(1, 4))):
-            t = t + pd.Timedelta(seconds=int(rng.integers(2, 20)))
-            evs.append(("item_view", t))
     if c:
         t = t + pd.Timedelta(seconds=int(rng.integers(5, 40)))
         evs.append(("add_to_cart", t))
@@ -139,7 +136,6 @@ def make_session(sid, uid, ch, dv, tr, ts, new):
         "ts": et,
         "event": en,
         "channel": ch,
-        "device": dv,
         "is_new": int(new),
         "cart_value": val,
         "delivery_fee": fee,
