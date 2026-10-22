@@ -102,7 +102,7 @@ fig.tight_layout()
 fig.savefig(os.path.join(c, "address_steps.png"))
 plt.close(fig)
 
-base = 25.64
+base = 26.03
 lift = 14
 fig, ax = plt.subplots(figsize=(7, 4.2))
 vals = [base, base * (1 + lift / 100)]
