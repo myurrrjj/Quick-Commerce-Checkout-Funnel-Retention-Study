@@ -1,9 +1,9 @@
 segment,stage,users,pct_of_top,step_rate
-First time,Item discovery,11326,96.8,96.8
-First time,Cart creation,4807,41.09,42.44
-First time,Address selection,3371,28.81,70.13
-First time,Payment done,3017,25.79,89.5
-Repeat,Item discovery,1092,97.15,97.15
-Repeat,Cart creation,672,59.79,61.54
-Repeat,Address selection,580,51.6,86.31
-Repeat,Payment done,531,47.24,91.55
+First time,Item discovery,11369,97.17,97.17
+First time,Cart creation,4835,41.32,42.53
+First time,Address selection,3396,29.03,70.24
+First time,Payment done,3045,26.03,89.66
+Repeat,Item discovery,1105,96.93,96.93
+Repeat,Cart creation,649,56.93,58.73
+Repeat,Address selection,564,49.47,86.9
+Repeat,Payment done,534,46.84,94.68
