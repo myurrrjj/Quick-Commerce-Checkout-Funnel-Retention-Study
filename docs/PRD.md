@@ -7,39 +7,39 @@ Last updated: October 2026
 
 ## 1. Summary
 
-First time buyers drop out of checkout at a rate of 37.2% between cart creation and payment. Repeat buyers drop out at 21.0%. The gap is friction, not intent. This document proposes a streamlined checkout that removes the two largest sources of that friction: late delivery fee disclosure and multi step address entry. It also adds a one tap UPI retry for failed payments.
+First time buyers drop out of checkout at a rate of 37.0% between cart creation and payment. Repeat buyers drop out at 17.7%. The gap is friction, not intent. This document proposes a streamlined checkout that removes the two largest sources of that friction: late delivery fee disclosure and multi step address entry. It also adds a one tap UPI retry for failed payments.
 
 ## 2. Problem
 
 Quick commerce checkout has four steps today: item discovery, cart creation, address selection and payment.
 
-From 12,824 analysed sessions:
+From 12,840 analysed sessions:
 
 - 42.7% of sessions reach cart creation.
 - 30.8% reach address selection.
-- 27.7% reach a successful payment.
+- 27.9% reach a successful payment.
 
 The largest absolute drop is discovery to cart, but that is a browsing behaviour and not a checkout defect. The drop that matters for this PRD is cart to payment, where the user has already decided to buy.
 
 Two findings stand out.
 
-**Finding 1: late fee reveal.** When the delivery fee is shown only at the payment step, first time buyer cart drop is 43.5%. When it is shown at the cart, it is 32.2%. 44.6% of first time sessions currently see the fee late.
+**Finding 1: late fee reveal.** When the delivery fee is shown only at the payment step, first time buyer cart drop is 43.0%. When it is shown at the cart, it is 32.0%. 45.1% of first time sessions currently see the fee late.
 
-**Finding 2: address steps.** Address entry with one or two steps holds around 77% of cart users. At four steps it holds 54.5%. The cart drop at four steps is 50.8% versus 30.9% at one step.
+**Finding 2: address steps.** Address entry with one or two steps holds around 77% of cart users. At four steps it holds 56.3%. The cart drop at four steps is 47.3% versus 33.7% at one step.
 
-A third, smaller finding: payment failures happen on 10.5% of payment attempts, and there is no retry path other than going back to the cart.
+A third, smaller finding: payment failures happen on 10.6% of payment attempts, and there is no retry path other than going back to the cart.
 
 ## 3. Goals
 
-Primary goal: increase first time buyer checkout conversion from 25.8% to at least 29.4% (a 14% relative lift) within one quarter of launch.
+Primary goal: increase first time buyer checkout conversion from 26.0% to at least 29.7% (a 14% relative lift) within one quarter of launch.
 
-Secondary goal: increase 30 day repeat rate from 13.2% to 14.4% (a 9% relative lift), by removing the negative first experience that suppresses return visits.
+Secondary goal: increase 30 day repeat rate from 13.1% to 14.3% (a 9% relative lift), by removing the negative first experience that suppresses return visits.
 
 Non goals: pricing, catalogue, delivery logistics, and the discovery to cart step.
 
 ## 4. Target user
 
-First time buyers on mobile, who are 77.3% of sessions. Within that group, users arriving from paid traffic, who have the highest cart drop at 41.9% and the lowest repeat rate at 9.2%.
+First time buyers on mobile, who are 77.6% of sessions. Within that group, users arriving from paid traffic, who have the highest cart drop at 40.6% and the lowest repeat rate at 8.3%.
 
 ## 5. Proposed changes
 
@@ -47,7 +47,7 @@ First time buyers on mobile, who are 77.3% of sessions. Within that group, users
 
 Show the delivery fee and the final payable amount on the cart screen, above the checkout button, before any address is entered.
 
-Rationale: this alone moves the cart drop from 43.5% to 32.2% in the current data.
+Rationale: this alone moves the cart drop from 43.0% to 32.0% in the current data.
 
 Acceptance criteria:
 - Delivery fee and total are visible on the cart screen for every session.
@@ -58,7 +58,7 @@ Acceptance criteria:
 
 Replace the multi step address flow with a single screen that combines saved addresses, pin code auto fill, and a manual entry fallback.
 
-Rationale: address entry at one or two steps holds 77% of cart users versus 54.5% at four steps.
+Rationale: address entry at one or two steps holds 77% of cart users versus 56.3% at four steps.
 
 Acceptance criteria:
 - New users can enter a full address on one screen.
@@ -70,7 +70,7 @@ Acceptance criteria:
 
 On payment failure, keep the user in a payment sheet with a retry button instead of returning them to the cart.
 
-Rationale: 10.5% of payment attempts fail, and today those users must restart from the cart.
+Rationale: 10.6% of payment attempts fail, and today those users must restart from the cart.
 
 Acceptance criteria:
 - On failure, the user stays on the payment step.
@@ -95,10 +95,10 @@ Rationale: paid traffic has the most to gain, with the highest drop and lowest r
 
 | Metric | Current | Target | Window |
 | --- | --- | --- | --- |
-| First time checkout conversion | 25.8% | 29.4% | 4 weeks post launch |
-| Cart to payment drop, first time | 37.2% | 32.0% | 4 weeks post launch |
-| Address step drop | 27.9% | under 22% | 4 weeks post launch |
-| 30 day repeat rate | 13.2% | 14.4% | 90 days post launch |
+| First time checkout conversion | 26.0% | 29.7% | 4 weeks post launch |
+| Cart to payment drop, first time | 37.0% | 32.0% | 4 weeks post launch |
+| Address step drop | 27.8% | under 22% | 4 weeks post launch |
+| 30 day repeat rate | 13.1% | 14.3% | 90 days post launch |
 | Payment retry success | not tracked | 40% of failures | 4 weeks post launch |
 
 Guardrail metrics: order cancellation rate, payment failure rate, and support ticket volume must not increase by more than 5%.
