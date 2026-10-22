@@ -10,35 +10,35 @@ Everything here runs end to end from a clean checkout of the repo. No external d
 
 ## The problem in one line
 
-Roughly 38% of first time buyers who add an item to cart never reach a successful payment, and the two biggest reasons are late delivery fee disclosure and multi step address entry.
+Roughly 37% of first time buyers who add an item to cart never reach a successful payment, and the two biggest reasons are late delivery fee disclosure and multi step address entry.
 
 ## Headline results
 
 | Metric | Value |
 | --- | --- |
-| Sessions analysed | 12,824 |
-| Events analysed | 59,982 |
+| Sessions analysed | 12,840 |
+| Events analysed | 35,359 |
 | Unique users | 11,700 |
-| Orders | 3,548 |
-| Overall checkout conversion | 27.7% |
-| First time buyer conversion | 25.8% |
-| Repeat buyer conversion | 47.2% |
-| Cart to payment drop, first time buyers | 37.2% |
-| Cart to payment drop, repeat buyers | 21.0% |
-| Cart to payment drop when fee shown late | 43.5% |
-| Cart to payment drop when fee shown at cart | 32.2% |
-| Cart to payment drop at 4 address steps | 50.8% |
-| Average order value | Rs 358 |
-| 30 day repeat rate | 13.2% |
+| Orders | 3,579 |
+| Overall checkout conversion | 27.9% |
+| First time buyer conversion | 26.0% |
+| Repeat buyer conversion | 46.8% |
+| Cart to payment drop, first time buyers | 37.0% |
+| Cart to payment drop, repeat buyers | 17.7% |
+| Cart to payment drop when fee shown late | 43.0% |
+| Cart to payment drop when fee shown at cart | 32.0% |
+| Cart to payment drop at 4 address steps | 47.3% |
+| Average order value | Rs 359 |
+| 30 day repeat rate | 13.1% |
 
 ## The funnel
 
 | Stage | Sessions | Share of top | Step drop |
 | --- | --- | --- | --- |
-| Item discovery | 12,418 | 96.8% | 3.2% |
-| Cart creation | 5,479 | 42.7% | 55.9% |
-| Address selection | 3,951 | 30.8% | 27.9% |
-| Payment done | 3,548 | 27.7% | 10.2% |
+| Item discovery | 12,474 | 97.2% | 2.9% |
+| Cart creation | 5,484 | 42.7% | 56.0% |
+| Address selection | 3,960 | 30.8% | 27.8% |
+| Payment done | 3,579 | 27.9% | 9.6% |
 
 ![Checkout funnel](outputs/charts/funnel_overall.png)
 
@@ -48,11 +48,11 @@ The single biggest leak is between discovery and cart creation. The most expensi
 
 Two factors explain most of the gap between first time and repeat buyers.
 
-**Late delivery fee disclosure.** When the delivery fee is revealed only at the payment step, the cart drop for first time buyers is 43.5%. When it is shown at the cart, the drop is 32.2%. That is an 11 point swing from one line of copy placement.
+**Late delivery fee disclosure.** When the delivery fee is revealed only at the payment step, the cart drop for first time buyers is 43.0%. When it is shown at the cart, the drop is 32.0%. That is an 11 point swing from one line of copy placement. 45.1% of first time sessions currently see the fee late.
 
 ![Fee disclosure](outputs/charts/fee_disclosure.png)
 
-**Multi step address entry.** Address entry with one or two steps holds around 77% of cart users. At three steps it falls to 66.9%, and at four steps it falls to 54.5%. Every extra step costs conversion.
+**Multi step address entry.** Address entry with one or two steps holds around 77% of cart users. At three steps it falls to 66.7%, and at four steps it falls to 56.3%. Every extra step costs conversion.
 
 ![Address steps](outputs/charts/address_steps.png)
 
@@ -60,11 +60,11 @@ Two factors explain most of the gap between first time and repeat buyers.
 
 | Channel | Sessions | Cart rate | Conversion | First time cart drop | 30 day repeat |
 | --- | --- | --- | --- | --- | --- |
-| Organic | 3,310 | 48.3% | 33.5% | 33.6% | 19.2% |
-| Referral | 1,638 | 44.4% | 28.9% | 36.3% | 11.4% |
-| Push | 2,599 | 42.4% | 27.1% | 37.5% | 11.9% |
-| Influencer | 1,478 | 39.4% | 26.4% | 35.2% | 11.0% |
-| Paid Ads | 3,799 | 38.7% | 23.0% | 41.9% | 9.2% |
+| Organic | 3,328 | 48.7% | 33.8% | 34.1% | 18.9% |
+| Referral | 1,660 | 44.2% | 31.8% | 30.4% | 14.5% |
+| Push | 2,574 | 42.4% | 27.0% | 38.7% | 11.7% |
+| Influencer | 1,476 | 39.8% | 24.1% | 40.5% | 9.9% |
+| Paid Ads | 3,802 | 38.2% | 23.0% | 40.6% | 8.3% |
 
 ![Drop by channel](outputs/charts/dropoff_by_channel.png)
 
@@ -74,7 +74,7 @@ Paid Ads brings in the most sessions and converts the worst. Organic brings in f
 
 ![Retention curve](outputs/charts/retention_curve.png)
 
-30 day repeat sits at 13.2% overall. It ranges from 19.2% for Organic to 9.2% for Paid Ads. Users whose first order involved a late fee reveal or four address steps repeat less, which links checkout friction directly to lifetime value, not just to the first order.
+30 day repeat sits at 13.1% overall. It ranges from 18.9% for Organic to 8.3% for Paid Ads. Users whose first order involved a late fee reveal or four address steps repeat less, which links checkout friction directly to lifetime value, not just to the first order.
 
 ## What we recommend building
 
