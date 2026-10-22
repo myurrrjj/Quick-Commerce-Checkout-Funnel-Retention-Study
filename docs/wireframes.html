@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Wireframes</title>
+<style>
+  :root {
+    --ink: #1e2230;
+    --mute: #6b7280;
+    --line: #e2e5ec;
+    --ind: #4f46e5;
+    --ind2: #eef0fe;
+    --tea: #0d9488;
+    --tea2: #e6f6f3;
+    --red: #dc2626;
+    --red2: #fdeceb;
+    --amb: #d97706;
+    --bg: #f6f7fb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 32px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  h2 { font-size: 20px; margin: 48px 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--mute); margin: 0 0 8px; }
+  .lead { color: var(--mute); max-width: 720px; }
+  .grid { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 20px; }
+  .phone {
+    width: 300px; background: #fff; border: 1px solid var(--line);
+    border-radius: 26px; padding: 14px; box-shadow: 0 12px 30px rgba(30,34,48,0.07);
+  }
+  .screen { background: var(--bg); border-radius: 16px; padding: 14px; min-height: 480px; }
+  .bar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .title { font-size: 13px; font-weight: 600; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+  .row { display: flex; justify-content: space-between; font-size: 12.5px; padding: 5px 0; }
+  .row span:last-child { color: var(--mute); }
+  .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mute); margin-bottom: 6px; }
+  .field { height: 30px; border: 1px solid var(--line); border-radius: 8px; background: #fff; margin-bottom: 8px; }
+  .field.fill { background: var(--ind2); border-color: #c9cdfb; }
+  .btn { display: block; text-align: center; padding: 11px; border-radius: 10px; font-size: 13px; font-weight: 600; margin-top: 12px; }
+  .btn.primary { background: var(--ind); color: #fff; }
+  .btn.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+  .btn.tea { background: var(--tea); color: #fff; }
+  .pill { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+  .pill.bad { background: var(--red2); color: var(--red); }
+  .pill.good { background: var(--tea2); color: var(--tea); }
+  .pill.warn { background: #fdf3e6; color: var(--amb); }
+  .note { font-size: 11.5px; color: var(--mute); margin-top: 6px; }
+  .fee { background: var(--red2); border: 1px solid #f7c9c6; border-radius: 10px; padding: 10px; font-size: 12px; color: #8a1c18; margin-bottom: 10px; }
+  .fee.ok { background: var(--tea2); border-color: #bfe6e0; color: #0a6b62; }
+  .cap { font-size: 13px; font-weight: 600; margin: 10px 2px 0; }
+  .cap em { font-style: normal; color: var(--mute); font-weight: 400; }
+  table { border-collapse: collapse; width: 100%; margin-top: 14px; font-size: 13.5px; background: #fff; border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  th { background: #fbfbfe; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--mute); }
+  tr:last-child td { border-bottom: none; }
+  .flow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .node { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; font-size: 12.5px; }
+  .node.hot { border-color: #f0b8b4; background: var(--red2); color: #8a1c18; font-weight: 600; }
+  .arrow { color: var(--mute); }
+  .legend { font-size: 12.5px; color: var(--mute); margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Checkout wireframes</h1>
+  <p class="lead">Before and after views of the quick commerce checkout. The changes come from the funnel study: move the delivery fee to the cart, collapse address entry to one screen, and keep the user on the payment step after a failure.</p>
+
+  <h2>Where the funnel leaks</h2>
+  <div class="flow">
+    <div class="node">Item discovery 96.8%</div>
+    <span class="arrow">→</span>
+    <div class="node">Cart creation 42.7%</div>
+    <span class="arrow">→</span>
+    <div class="node hot">Address selection 30.8%</div>
+    <span class="arrow">→</span>
+    <div class="node hot">Payment done 27.7%</div>
+  </div>
+  <p class="legend">Red stages are where the fixable drop happens. First time buyers drop 37.2% from cart to payment. Repeat buyers drop 21.0%.</p>
+
+  <h2>Before: current checkout</h2>
+  <p class="sub">Four steps, fee revealed late, failure sends the user back to cart.</p>
+  <div class="grid">
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Cart</div></div>
+        <div class="card">
+          <div class="row"><span>Fresh milk 500ml</span><span>Rs 32</span></div>
+          <div class="row"><span>Brown bread</span><span>Rs 45</span></div>
+          <div class="row"><span>Item total</span><span>Rs 77</span></div>
+        </div>
+        <div class="fee"><span class="pill bad">No fee shown</span><div class="note" style="color:#8a1c18">Delivery fee is not visible here. It will appear at payment.</div></div>
+        <div class="btn primary">Proceed to checkout</div>
+        <p class="note">User has no idea of the final total.</p>
+      </div>
+      <p class="cap">Step 1 <em>Cart</em></p>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Add address</div></div>
+        <div class="lbl">Step 1 of 4</div>
+        <div class="field"></div>
+        <div class="lbl">Step 2 of 4</div>
+        <div class="field"></div>
+        <div class="lbl">Step 3 of 4</div>
+        <div class="field"></div>
+        <div class="lbl">Step 4 of 4</div>
+        <div class="field"></div>
+        <div class="btn ghost">Next</div>
+        <div class="note"><span class="pill bad">4 steps</span> Cart drop at four steps is 50.8%.</div>
+      </div>
+      <p class="cap">Step 2 <em>Address, multi step</em></p>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Payment</div></div>
+        <div class="card">
+          <div class="row"><span>Item total</span><span>Rs 77</span></div>
+          <div class="row"><span>Delivery fee</span><span>Rs 39</span></div>
+          <div class="row"><span>To pay</span><span>Rs 116</span></div>
+        </div>
+        <div class="fee"><span class="pill warn">Fee appears now</span><div class="note" style="color:#8a1c18">Fee was hidden until this step. Cart drop when fee is late is 43.5%.</div></div>
+        <div class="btn primary">Pay with UPI</div>
+      </div>
+      <p class="cap">Step 3 <em>Payment</em></p>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Payment failed</div></div>
+        <div class="card">
+          <div class="note" style="color:#8a1c18">UPI request timed out.</div>
+        </div>
+        <div class="btn ghost">Back to cart</div>
+        <div class="note"><span class="pill bad">Cart lost</span> The user has to redo address and payment. 10.5% of attempts fail.</div>
+      </div>
+      <p class="cap">Step 4 <em>Failure</em></p>
+    </div>
+
+  </div>
+
+  <h2>After: streamlined checkout</h2>
+  <p class="sub">Fee at cart, one screen address, one tap UPI retry.</p>
+  <div class="grid">
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Cart</div></div>
+        <div class="card">
+          <div class="row"><span>Fresh milk 500ml</span><span>Rs 32</span></div>
+          <div class="row"><span>Brown bread</span><span>Rs 45</span></div>
+          <div class="row"><span>Item total</span><span>Rs 77</span></div>
+          <div class="row"><span>Delivery fee</span><span>Rs 39</span></div>
+          <div class="row" style="font-weight:700"><span>To pay</span><span>Rs 116</span></div>
+        </div>
+        <div class="fee ok"><span class="pill good">Fee shown here</span><div class="note" style="color:#0a6b62">Full total visible before address entry.</div></div>
+        <div class="btn primary">Proceed to checkout</div>
+      </div>
+      <p class="cap">Step 1 <em>Cart, fee visible</em></p>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Delivery address</div></div>
+        <div class="lbl">Saved addresses</div>
+        <div class="field fill">Home, tap to select</div>
+        <div class="field fill">Work, tap to select</div>
+        <div class="lbl">Or add new, pin code auto fill</div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="btn ghost">Save and continue</div>
+        <div class="note"><span class="pill good">1 screen</span> One or two steps hold 77% of cart users.</div>
+      </div>
+      <p class="cap">Step 2 <em>Address, one screen</em></p>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Payment</div></div>
+        <div class="card">
+          <div class="row"><span>Item total</span><span>Rs 77</span></div>
+          <div class="row"><span>Delivery fee</span><span>Rs 39</span></div>
+          <div class="row" style="font-weight:700"><span>To pay</span><span>Rs 116</span></div>
+        </div>
+        <div class="note">Total matches the cart. No surprise.</div>
+        <div class="btn tea">Pay with UPI</div>
+      </div>
+      <p class="cap">Step 3 <em>Payment</em></p>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="title">Payment failed</div></div>
+        <div class="card">
+          <div class="note" style="color:#8a1c18">UPI request timed out. Your cart is safe.</div>
+        </div>
+        <div class="btn tea">Retry UPI in one tap</div>
+        <div class="btn ghost">Use another method</div>
+        <div class="note"><span class="pill good">Cart kept</span> User stays on this step. Retry target is 40% of failures.</div>
+      </div>
+      <p class="cap">Step 4 <em>Failure, retry</em></p>
+    </div>
+
+  </div>
+
+  <h2>What each change is worth</h2>
+  <table>
+    <thead>
+      <tr><th>Change</th><th>Evidence</th><th>Projected impact</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Fee shown at cart</td><td>Cart drop falls from 43.5% to 32.2% when fee is early</td><td>About 3 points of first time conversion</td></tr>
+      <tr><td>One screen address</td><td>Four steps drop 50.8% vs one step 30.9%</td><td>Recover most of the 20 point gap</td></tr>
+      <tr><td>One tap UPI retry</td><td>10.5% of payment attempts fail</td><td>Recover a share of failed attempts</td></tr>
+      <tr><td>Paid traffic first</td><td>Paid Ads converts 23.0% and repeats 9.2%</td><td>Largest headroom in the mix</td></tr>
+    </tbody>
+  </table>
+
+  <p class="legend">Together these project a 14% relative lift in checkout conversion and a 9% relative lift in 30 day repeat. See the A/B test plan for the measurement design.</p>
+
+</div>
+</body>
+</html>
